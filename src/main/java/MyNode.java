@@ -1,6 +1,6 @@
 package com.mynodetest;
 
-public class MyNode<K> {
+public class MyNode<K> implements INode<K> {
 
 	private K Key;
 	private MyNode next;
@@ -8,6 +8,16 @@ public class MyNode<K> {
 	public MyNode(K key) {
 		this.Key = key;
 		this.next = null;
+	}
+
+	@Override
+	public K getKey() {
+		return Key;
+	}
+
+	@Override
+	public void setKey(K key) {
+		this.next = (MyNode<K>) next;
 	}
 
 	public MyNode getNext() {
