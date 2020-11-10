@@ -3,16 +3,17 @@ package com.mynodetest;
 public class MyLinkedList {
 	public INode head;
 	public INode tail;
-	
+
 	public MyLinkedList() {
 		this.head = null;
 		this.tail = null;
 	}
 
+	//Function for adding the nodes at front
 	public void add(INode newNode) {
 		if(this.tail == null) {
 		this.tail = newNode;
-		
+
 	}
 		if(this.head == null) {
 			this.head = newNode;
@@ -22,7 +23,20 @@ public class MyLinkedList {
 			this.head = newNode;
 			this.head.setNext(tempNode);
 		}
-}
+	}
+
+	//Function for append the nodes at end
+	public void append(INode myNode) {
+		if (this.head == null) {
+			this.head = myNode;
+		}
+		if (this.tail == null) {
+			this.tail = myNode;
+		} else {
+			this.tail.setNext(myNode);
+			this.tail = myNode;
+		}
+	}
 
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes:");
