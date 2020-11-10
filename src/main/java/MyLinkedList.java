@@ -38,11 +38,18 @@ public class MyLinkedList {
 		}
 	}
 
-	//Function for Insert Number in middle
+	//Function for Insert Node in middle
 	public void insert(INode myNode, INode newNode) {
 		INode tempNode = myNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
+	}
+
+	//Function for pop FirstNode
+	public INode pop() {
+		INode tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
 	}
 
 	public void printMyNodes() {
