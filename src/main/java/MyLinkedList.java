@@ -52,6 +52,7 @@ public class MyLinkedList {
 		return tempNode;
 	}
 
+	//Function for print all the nodes
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes:");
 		INode tempNode = head;
@@ -61,6 +62,18 @@ public class MyLinkedList {
 			tempNode = tempNode.getNext();
 			}
 		myNodes.append(tempNode.getKey());
+		System.out.println(myNodes);
+	}
+
+	public void printMyNodesFirstTwoNodes() {
+		StringBuffer myNodes = new StringBuffer("My Nodes:");
+		INode tempNode = head;
+		while (tempNode.getNext() != null) {
+			myNodes.append(tempNode.getKey());
+			if (!tempNode.equals(tail))
+				myNodes.append("->");
+			tempNode = tempNode.getNext();
+		}
 		System.out.println(myNodes);
 	}
 }
