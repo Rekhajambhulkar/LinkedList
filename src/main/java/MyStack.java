@@ -19,4 +19,15 @@ public class MyStack {
 	public INode peak() {
 		return myLinkedList.head;
 	}
+
+	public void clear() {
+		while(myLinkedList.head != null) {
+			myLinkedList.printMyNodes();
+			myLinkedList.pop();
+		}
+	}
+
+	public boolean isEmpty() {
+		return (myLinkedList.head == null);
+	}
 }
