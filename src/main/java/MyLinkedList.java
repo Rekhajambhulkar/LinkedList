@@ -52,6 +52,16 @@ public class MyLinkedList {
 		return tempNode;
 	}
 
+	//Function for search the secondNode
+	public INode search(INode newNodeToSearch) {
+		INode tempNode = this.head;
+		while(!tempNode.getNext().equals(newNodeToSearch)) {
+			tempNode = tempNode.getNext();
+		}
+		tempNode = tempNode.getNext();
+		return tempNode;
+	}
+
 	//Function for print all the nodes
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes:");
