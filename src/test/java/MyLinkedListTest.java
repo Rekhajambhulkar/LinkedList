@@ -123,4 +123,26 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		Assert.assertTrue(result);
 	}
+
+	@Test
+	//Deleting Node after Particular Node
+	public void shouldPassThisTestWhenSpecifiedNodeIsDeletedLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(40);
+		MyNode<Integer> myForthNode = new MyNode<>(70);
+
+		MyLinkedList myLinkedList = new MyLinkedList();
+
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myForthNode);
+
+		myLinkedList.deleteNodeAfterSpecifiedNode(myThirdNode, mySecondNode);
+		System.out.print("Delete After\t- ");
+		myLinkedList.printMyNodes();
+		boolean result = myLinkedList.head.getNext().getNext().equals(myForthNode);
+		Assert.assertTrue(result);
+	}
 }

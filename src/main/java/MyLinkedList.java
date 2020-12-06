@@ -75,6 +75,14 @@ public class MyLinkedList {
 		return (tempNode.equals(specifiedNode) && specifiedNode.getNext().equals(insertionNode));
 	}
 
+	public void deleteNodeAfterSpecifiedNode(INode deleteNoad, MyNode specifiedNode) {
+		INode tempNode = this.head;
+		while(!tempNode.equals(specifiedNode)) {
+			tempNode = tempNode.getNext();
+		}
+		tempNode.setNext(this.tail);
+	}
+
 	//Function for print all the nodes
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes:");
