@@ -1,0 +1,23 @@
+package com.mynodetest;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class MyStackTest {
+
+    @Test
+    public void given3NumbersAddedToStackAndLastAddedNodeShouldBePeek() {
+        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(56);
+
+        MyStack myStack = new MyStack();
+
+        myStack.push(myFirstNode);
+        myStack.push(mySecondNode);
+        myStack.push(myThirdNode);
+        myStack.printMyNode();
+        INode result = myStack.peak();
+        Assert.assertEquals(myThirdNode, result);
+    }
+}
