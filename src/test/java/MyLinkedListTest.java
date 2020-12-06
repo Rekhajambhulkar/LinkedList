@@ -103,4 +103,24 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		Assert.assertEquals(mySecondNode, result);
 	}
+
+	@Test
+	//Inserting a Node after Particular Node
+	public void shouldPassThisTestWhenOneValueInsertedAfterSpecifiedValueLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> insertionNode = new MyNode<>(40);
+
+		MyLinkedList myLinkedList = new MyLinkedList();
+
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+
+		boolean result = myLinkedList.insertNodeAfterSpecifiedNode(insertionNode, mySecondNode);
+		System.out.print("Insert After\t- ");
+		myLinkedList.printMyNodes();
+		Assert.assertTrue(result);
+	}
 }

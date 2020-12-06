@@ -62,6 +62,19 @@ public class MyLinkedList {
 		return tempNode;
 	}
 
+	//Function for InsertNode after specified Node
+	public boolean insertNodeAfterSpecifiedNode(INode insertionNode, INode specifiedNode) {
+		INode tempNode = this.head;
+		while(!tempNode.equals(specifiedNode)) {
+			tempNode = tempNode.getNext();
+		}
+		INode nextNode = tempNode.getNext();
+		tempNode.setNext(insertionNode);
+		insertionNode.setNext(nextNode);
+
+		return (tempNode.equals(specifiedNode) && specifiedNode.getNext().equals(insertionNode));
+	}
+
 	//Function for print all the nodes
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes:");
@@ -75,6 +88,7 @@ public class MyLinkedList {
 		System.out.println(myNodes);
 	}
 
+	//Function for printFirstNodes
 	public void printMyNodesFirstTwoNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes:");
 		INode tempNode = head;
