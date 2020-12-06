@@ -1,6 +1,6 @@
 package com.mynodetest;
 
-public class MyLinkedList {
+public class MyLinkedList<K extends Comparable<K>> {
 	public INode head;
 	public INode tail;
 
